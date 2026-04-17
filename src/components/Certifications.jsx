@@ -5,12 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const TITLE = 'CERTIFICATIONS'
 
 const PROFESSIONAL = [
-  { name: 'Google AI Essentials',                                          issuer: 'Google',           year: '2025', url: 'https://coursera.org/verify/E0Z2DJQYTYT' },
-  { name: 'Google Prompting Essentials',                                   issuer: 'Google',           year: '2025', url: 'https://coursera.org/verify/DYTN1I5BGAD0' },
+  { name: 'Google AI Essentials',                                          issuer: 'Google',           year: '2024', url: 'https://coursera.org/verify/E0Z2DJQYTYT' },
+  { name: 'Google Prompting Essentials',                                   issuer: 'Google',           year: '2024', url: 'https://coursera.org/verify/DYTN1I5BGAD0' },
   { name: 'Google Data Analytics Professional Certificate',                issuer: 'Google',           year: '2025', url: 'https://coursera.org/verify/professional-cert/ZD8ORYFY6TGW' },
-  { name: 'Google Digital Marketing & E-Commerce Professional Certificate',issuer: 'Google',           year: '2025', url: null },
+  { name: 'Google Digital Marketing & E-Commerce Professional Certificate',issuer: 'Google',           year: '2024', url: null },
   { name: 'Meta Social Media Marketing Professional Certificate',          issuer: 'Meta',             year: '2025', url: 'https://coursera.org/verify/PQ4F54HBPVS4' },
-  { name: 'AI Fluency',                                                    issuer: 'Anthropic',        year: '2025', url: null },
+  { name: 'AI Fluency',                                                    issuer: 'Anthropic',        year: '2026', url: null },
 ]
 
 const COURSES = [

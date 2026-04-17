@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
-const NAV_ITEMS = ['About', 'Skills', 'Projects', 'Certifications', 'Enquire']
+const NAV_ITEMS = ['About', 'Projects', 'Skills', 'Certifications', 'Enquire']
 
 export default function Nav() {
   const navRef     = useRef(null)

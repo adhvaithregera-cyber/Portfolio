@@ -36,6 +36,10 @@ button {
 }
 
 /* ── Noise overlay ───────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .noise-overlay { display: none; }
+}
+
 .noise-overlay {
   position: fixed;
   inset: 0;
@@ -390,15 +394,22 @@ button {
   .about-right {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
+    gap: 0.75rem;
   }
 
   .about-stat {
-    padding: 1rem 0;
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+  }
+
+  .about-stat-divider {
+    display: none;
   }
 
   .about-stat-value {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 }
 
@@ -1046,6 +1057,52 @@ button {
     overflow-y: auto;
   }
   .browser-screen { height: 220px; }
+}
+
+/* Mobile — disable horizontal scroll, stack vertically */
+@media (hover: none) and (pointer: coarse) {
+  .projects-container {
+    overflow: visible;
+  }
+
+  .projects-track {
+    flex-direction: column;
+    transform: none !important;
+  }
+
+  .project-panel {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 2.5rem);
+  }
+
+  .project-panel-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .project-mockup-col {
+    width: 100%;
+  }
+
+  .browser-frame {
+    width: 100%;
+  }
+
+  .browser-screen {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .mockup-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mockup-nav-links {
+    display: none;
+  }
 }
 
 /* ── Grid background pattern ────────────────────────────────── */

@@ -19,31 +19,35 @@ export default function Projects() {
   const [storyOpen, setStoryOpen] = useState(false)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(trackRef.current, {
-        x: () => -(trackRef.current.scrollWidth - window.innerWidth),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: () => `+=${trackRef.current.scrollWidth - window.innerWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      })
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
 
-      gsap.from(mockupRef.current, {
-        scale: 0.85,
-        duration: 1.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      })
+    const ctx = gsap.context(() => {
+      if (!isTouch) {
+        gsap.to(trackRef.current, {
+          x: () => -(trackRef.current.scrollWidth - window.innerWidth),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: () => `+=${trackRef.current.scrollWidth - window.innerWidth}`,
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        })
+
+        gsap.from(mockupRef.current, {
+          scale: 0.85,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+            once: true,
+          },
+        })
+      }
     }, containerRef)
 
     ScrollTrigger.refresh()

@@ -23,21 +23,22 @@ export default function Hero() {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
 
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-      tl.from('.letter-first', {
-          y: 80, opacity: 0, duration: 0.8, stagger: 0.05,
-        })
-        .from('.letter-last', {
-          y: 80, opacity: 0, duration: 0.8, stagger: 0.05,
-        }, '-=0.5')
-        .from('.hero-tagline', {
-          y: 24, opacity: 0, duration: 0.7,
-        }, '-=0.25')
-        .from('.hero-icons', {
-          y: 12, opacity: 0, duration: 0.6,
-        }, '-=0.3')
+      if (isTouch) {
+        // Mobile — animate whole blocks, no per-letter stagger
+        tl.from('.hero-name', { y: 40, opacity: 0, duration: 0.6 })
+          .from('.hero-tagline', { y: 20, opacity: 0, duration: 0.5 }, '-=0.2')
+          .from('.hero-icons',   { y: 12, opacity: 0, duration: 0.4 }, '-=0.2')
+      } else {
+        tl.from('.letter-first', { y: 80, opacity: 0, duration: 0.8, stagger: 0.05 })
+          .from('.letter-last',  { y: 80, opacity: 0, duration: 0.8, stagger: 0.05 }, '-=0.5')
+          .from('.hero-tagline', { y: 24, opacity: 0, duration: 0.7 }, '-=0.25')
+          .from('.hero-icons',   { y: 12, opacity: 0, duration: 0.6 }, '-=0.3')
+      }
     }, heroRef)
 
     return () => ctx.revert()

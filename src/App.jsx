@@ -17,14 +17,19 @@ export default function App() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    const lenis = new Lenis({ lerp: 0.08 })
-    window.__lenis = lenis
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
 
-    const rafFn = (time) => lenis.raf(time * 1000)
-    gsap.ticker.add(rafFn)
-    gsap.ticker.lagSmoothing(0)
+    let lenis   = null
+    let rafFn   = null
 
-    lenis.on('scroll', ScrollTrigger.update)
+    if (!isTouch) {
+      lenis = new Lenis({ lerp: 0.08 })
+      window.__lenis = lenis
+      rafFn = (time) => lenis.raf(time * 1000)
+      gsap.ticker.add(rafFn)
+      gsap.ticker.lagSmoothing(0)
+      lenis.on('scroll', ScrollTrigger.update)
+    }
 
     // Scroll progress bar
     gsap.to('.scroll-progress', {
@@ -39,8 +44,7 @@ export default function App() {
     })
 
     return () => {
-      lenis.destroy()
-      gsap.ticker.remove(rafFn)
+      if (lenis)  { lenis.destroy(); gsap.ticker.remove(rafFn) }
     }
   }, [])
 
