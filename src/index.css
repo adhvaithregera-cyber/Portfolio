@@ -1440,6 +1440,16 @@ body::before {
   text-shadow: 0 0 24px rgba(245, 158, 11, 0.45), 0 0 60px rgba(245, 158, 11, 0.15);
 }
 
+.contact-footer-email {
+  color: inherit;
+  text-decoration: none;
+  text-shadow: inherit;
+}
+
+.contact-footer-email:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .service-cards {
     grid-template-columns: 1fr;

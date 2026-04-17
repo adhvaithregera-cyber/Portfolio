@@ -142,7 +142,7 @@ export default function Contact() {
 
       <div className="contact-footer-box">
         <p className="contact-footer-line">
-          Serious enquiries only&nbsp;—&nbsp;adhvaith.regera@gmail.com
+          Serious enquiries only&nbsp;—&nbsp;<a href="mailto:adhvaith.regera@gmail.com" className="contact-footer-email">adhvaith.regera@gmail.com</a>
         </p>
       </div>
     </section>
