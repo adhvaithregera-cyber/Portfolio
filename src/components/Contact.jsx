@@ -10,7 +10,7 @@ const SERVICES = [
     title:    'A clean, fast personal site.',
     desc:     'Your name, your work, your presence online — done right.',
     price:    '₹1,500 – ₹3,000',
-    popular:  false,
+    popular:  true,
     features: [
       'Fully responsive design',
       'GSAP scroll animations',
@@ -23,7 +23,7 @@ const SERVICES = [
     title:    'A fully functional web app.',
     desc:     'Real software — auth, database, accounts, and a live user base.',
     price:    '₹5,000 – ₹8,000',
-    popular:  true,
+    popular:  false,
     features: [
       'Full-stack (React + backend)',
       'User auth & accounts',
