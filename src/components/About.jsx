@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const STATS = [
   { num: '01',  label: 'Live products shipped' },
   { num: '20+', label: 'Certifications in digital marketing & AI' },
-  { num: '12',  label: 'Grade — graduating 2027' },
+  { num: '27',  label: 'Graduating 2027' },
   { num: '∞',   label: 'Things still being built' },
 ]
 
@@ -91,7 +91,7 @@ export default function About() {
         {/* Left column */}
         <div className="about-left" ref={leftRef}>
           <h2 className="about-statement" id="about-heading">
-            Grade 12. Building things that matter.
+            Building things that matter.
           </h2>
           <div className="about-body">
             <p>Grade 12 student at Chrysalis High, Bengaluru — building towards a career at the intersection of front-end engineering, design, and digital marketing.</p>
