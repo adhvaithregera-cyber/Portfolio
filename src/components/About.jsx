@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const STATS = [
   { num: '01',  label: 'Live products shipped' },
-  { num: '20+', label: 'Certifications in digital marketing & AI' },
+  { num: '20+', label: 'Certifications in web dev, AI & digital marketing' },
 
   { num: '∞',   label: 'Things still being built' },
 ]
